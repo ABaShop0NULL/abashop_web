@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <div class="sidebar-content">
     <div class="sidebar-top">
       <img
@@ -110,4 +110,3 @@ export default {
   }
 }
 </style>
- -->

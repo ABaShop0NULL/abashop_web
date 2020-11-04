@@ -1,24 +1,31 @@
 <template>
   <div>
     <ToolBar>
-      <div style="margin-top: 20px;margin-bottom: 20px;">
+      <div>
+        <el-button type="primary" size="small" @click="showEditDialog = true"
+          >添加商品</el-button>
+      <!--  <el-button type="primary" size="small" @click="exportTable"
+          >本地导出表格</el-button
+        > -->
+      </div>
+      <div>
         <el-input
           placeholder="请输入商品名"
           size="small"
-          style="width: 300px"
+          style="width: 140px"
           v-model="searchParams.title"
           clearable
         ></el-input>
-     <!--   <el-select
+        <el-select
           v-model="searchParams.type"
           clearable
           style="width: 140px"
           placeholder="请选择商品类型"
           size="small"
-        > -->
-     <!--     <el-option label="手机" value="1"></el-option>
+        >
+          <el-option label="手机" value="1"></el-option>
           <el-option label="美食" value="2"></el-option>
-        </el-select> -->
+        </el-select>
         <el-button type="success" size="small" @click="refresh()"
           >查询</el-button
         >
@@ -38,19 +45,21 @@
       <el-table-column fixed="right" label="操作" width="240">
         <div slot-scope="s">
           <el-button type="primary" size="small" @click="routeDemo(s.row)"
-            >加入购物车</el-button>
-      <!--    <el-button type="danger" size="small" @click="removeItem(s.row)"
+            >(待修改)</el-button>
+          <el-button type="danger" size="small" @click="removeItem(s.row)"
             >删除</el-button
-          > -->
+          >
         </div>
       </el-table-column>
     </el-table>
-	
-	<!-- 分页 -->
-		<el-pagination layout="prev, pager, next" @current-change="currentChange" @size-change="handleSizeChange"
-		 :current-page="currpage" :page-size="pagesize" :total="6">
-		</el-pagination>
-  
+	<el-pagination background
+				layout="prev, pager, next"
+				@current-change="currentChange"
+				:page-size="pageSize"
+	  :total="total">
+	</el-pagination>
+ 
+    <Edit :showEditDialog="showEditDialog" @close="showEditDialog = false" />
   </div>
 </template>
 
@@ -61,18 +70,19 @@ import g3 from '@/assets/images/goods/2018110103.jpg'
 import g4 from '@/assets/images/goods/2018110104.jpg'
 import g5 from '@/assets/images/goods/2018110105.jpg'
 import g6 from '@/assets/images/goods/2018110106.jpg'
-
+// import { topics } from "@/api/articleManage/list";
 import { resetObject } from "@/utils/common";
-
+import Edit from "./Edit.vue";
 export default {
   data() {
     return {
+		pageSize: 3,//每页显示的数据
+		total:0,//总条数
+		pageNo:1,//当前页码默认第一页
       searchParams: {
         title: "",
         type: ""
       },
-	  currentPage:1,
-	  pagesize:2,
       showEditDialog: false,
       tableData: [
         {
@@ -124,18 +134,13 @@ export default {
     routeDemo() {
       this.$message.info("待添加");
     },
-		 currentChange(currentPage) {
-			this.currpage = currentPage;
-		 },
-		 handleSizeChange(size) {
-			this.pagesize = size;
-		 },
     refresh() {
-      this.$refs.pagination.Refresh(); //分页刷新
+      //this.$refs.pagination.Refresh(); //分页刷新
     },
-    returnData(pageList) {
-      this.tableData = pageList.list;
-    },
+	currentChange(currentPage){
+	  this.pageNo = currentPage;
+	  this.initData()//根据新的页码选取分页数据
+	},
     clearSearchParams() {
       resetObject(this.searchParams);
       this.refresh();
@@ -161,6 +166,6 @@ export default {
         .catch(() => {});
     }
   },
-  //components: { Edit }
+  components: { Edit }
 };
 </script>

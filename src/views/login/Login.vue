@@ -7,14 +7,18 @@
       <el-form-item label="密码" prop="pass">
         <el-input v-model="loginForm.pass" show-password></el-input>
       </el-form-item>
-      <el-form-item >
+	  <el-form-item label="验证码" prop="num">
+	    <el-input v-model="loginForm.num"></el-input>
+	  </el-form-item>
+      <el-form-item>
         <el-button type="primary" @click="login">登录</el-button>
         <el-button @click.native="$router.push({name:'Register'})">注册</el-button>
+        <el-row>
           
-         <!-- <el-col :span="12" style="text-align:right;font-size: 10px;">
+          <el-col :span="12" style="text-align:right">
             <el-link type="primary">忘记密码</el-link>
-          </el-col> -->
-
+          </el-col>
+        </el-row>
       </el-form-item>
     </el-form>
   </div>
@@ -27,20 +31,23 @@ export default {
     return {
       loginForm: {
         name: "",
-        pass: ""
+        pass: "",
+		num:""
       },
       rules: {
         name: [{ required: true, message: "请输入用户名", trigger: "blur" }],
-        pass: [{ required: true, message: "请输入密码", trigger: "blur" }]
+        pass: [{ required: true, message: "请输入密码", trigger: "blur" }],
+		
       }
     };
   },
   methods: {
    login() {
-   	if(this.loginForm.name=='aaa1'&&
-   	this.loginForm.pass=='123'){
+	   //用户
+   	if(this.loginForm.name=='aaa2'&&
+   	this.loginForm.pass=='12345'){
    			setToken("HJDF844GDFG5D8J7FGHFG5");
-   		  this.$router.push("/");
+   		  this.$router.push("/webIndex");
    	
      //登陆验证
      // this.$refs[loginForm].validate(valid => {
@@ -59,7 +66,12 @@ export default {
      //         }
      //       })
      //       .catch(() => {});
-       } else {
+	      //商家
+       } else if(this.loginForm.name=='aaa1'&&
+   	     this.loginForm.pass=='123'){
+		   setToken("HJDF844GDFG5D8J7FGHFG5");
+		   this.$router.push("/");
+	   }else {
          this.$message("用户名或密码错误！！");
          return false;
        }

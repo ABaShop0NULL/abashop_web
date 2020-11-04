@@ -1,49 +1,36 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-//import Layout from "@/views/layout/App.vue";
+import Layout from "@/views/layout/App.vue";
 import GoodsManage from "./goodsManage";
+
 Vue.use(VueRouter);
 
 const routes = [
-	{
-	  path: "/",
-	  name: "Home",
-	  meta: {
-	    title: "首页",
-	    keepAlive: false
-	  },
-	  components: {
-	    blank: resolve => require(["@/views/webManage/index.vue"], resolve)
-	  }
-	},
-	{
-	  path: "/goods_manage",
-	  name: "goods",
-	  meta: {
-	    title: "商品首页",
-	    keepAlive: false
-	  },
-	  components: {
-	    blank: resolve => require(["@/views/goodsManage/goodsList/Index.vue"], resolve)
-	  }
-	},
-	{
-	  path: "/carIndex",
-	  name: "CarIndex",
-	  meta: {
-	    title: "购物车",//相当于title标签 
-	  },
-	  components: {
-	    blank: resolve => require(["@/views/webManage/Cart.vue"], resolve)
-	  }
-	},
-
+  {
+    path: "/",
+    component: Layout,
+    name: "Dashboard",
+    redirect: "/home",
+    meta: {
+      title: "后台管理系统"
+    },
+    children: [
+      {
+        path: "home",
+        name: "DashboardHome",
+        meta: {
+          title: "首页"
+        },
+        component: resolve => require(["@/views/home/Index.vue"], resolve)
+      }
+    ]
+  },
   GoodsManage,
   {
     path: "/login",
     name: "Login",
     meta: {
-      title: "登录",
+      title: "后台登录",
       keepAlive: false
     },
     components: {
@@ -54,13 +41,46 @@ const routes = [
     path: "/register",
     name: "Register",
     meta: {
-      title: "注册",
+      title: "后台注册",
       keepAlive: false
     },
     components: {
       blank: resolve => require(["@/views/login/Register.vue"], resolve)
     }
-  }
+  },
+  {
+    path:'/webIndex',
+    name:'WebIndex',
+    meta: {
+      title: "商城首页",
+      keepAlive: false
+    },
+    components: {
+      blank: resolve => require(["@/views/webManage/Index.vue"], resolve)
+    }
+  },
+  {
+    path: "/cartIndex",
+    name: "CarIndex",
+    meta: {
+      title: "后台注册",
+      keepAlive: false
+    },
+    components: {
+      blank: resolve => require(["@/views/webManage/Cart.vue"], resolve)
+    }
+  },
+  {
+    path: "/aboutUs",
+    name: "Aboutus",
+    meta: {
+      title: "后台注册",
+      keepAlive: false
+    },
+    components: {
+      blank: resolve => require(["@/views/webManage/Aboutus.vue"], resolve)
+    }
+  },
 ];
 
 const originalPush = VueRouter.prototype.push;

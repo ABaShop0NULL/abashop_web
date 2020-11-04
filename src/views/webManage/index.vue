@@ -12,7 +12,7 @@
 		  active-text-color="#ffd04b">
 		  <el-menu-item index="1">商品首页</el-menu-item>
 		  <el-submenu index="2">
-		    <template slot="title">商品类型(未写)</template>
+		    <template slot="title">商品类型(待完善)</template>
 		    <el-menu-item index="2-1">电子</el-menu-item>
 		    <el-menu-item index="2-2">美食</el-menu-item>
 		    <el-menu-item index="2-3">护肤</el-menu-item>
@@ -23,10 +23,22 @@
 		      <el-menu-item index="2-4-3">牙膏</el-menu-item>
 		    </el-submenu>
 		  </el-submenu>
-		  <el-menu-item index="3" @click="chage">商品页面(待修改)</el-menu-item>
-		 <el-menu-item index="4" style="float: right;" @click.native="$router.push({name:'CarIndex'})">
-		 查看我的购物车（待完善）
-		 </el-menu-item>
+			 <el-menu-item index="3" style="float: left;" >订单(待写)</el-menu-item>
+			  <el-menu-item index="4" style="float: left;" @click.native="$router.push({name:'CarIndex'})">
+					 查看我的购物车(待完善)</el-menu-item>
+			 <el-menu-item index="5" style="float: left;" @click.native="$router.push({name:'Aboutus'})">
+					关于我们(胡扯中…)</el-menu-item>
+					
+					
+					<el-menu-item index="7" style="float: left;" @click.native="$router.push({name:'DashboardHome'})">
+										后台登录(现在为了方便，到时候删)</el-menu-item>
+										
+	
+					<el-submenu index="6" style="float: right;">
+						  <template slot="title">个人中心(待写)</template>
+						  <el-menu-item index="6-1">个人信息(待写)</el-menu-item>
+						  <el-menu-item index="6-2" @click="logout">退出</el-menu-item>
+					</el-submenu>
 		</el-menu>
 		<!-- 轮播图 -->
 		 <div class="box">	   
@@ -41,12 +53,13 @@
 		 <div class="goodsLists">
 			<el-row :gutter="20">
 				<el-col :span="8" v-for="item in goodsList" :key="item.goodsName">
-					<div class="item">
-							<el-image style="width: 350px; height: 350px;" :src="item.url"></el-image>
-							<h3>{{item.goodsName}}</h3>
-							<p>{{item.detail}}</p>
-					</div>
+          <div class="item">
+					<el-image style="width: 350px; height: 350px;" :src="item.url"></el-image>
+					<h3>{{item.goodsName}}</h3>
+					<p>{{item.detail}}</p>
+          </div>
 				</el-col>
+				
 			</el-row>
 		 </div> 
 		  
@@ -129,8 +142,8 @@
 	      handleSelect(key, keyPath) {
 	        console.log(key, keyPath);
 	      },
-		  chage(){
-			  this.$router.push("/goods_manage");
+		  logout() {
+		    this.$router.push({name:'Login'})
 		  }
 	    }
 	  }
@@ -153,7 +166,7 @@
 		
 	}
 	.item{
-    height: 500px;
+    height: 400px;
   }
 	
 </style>

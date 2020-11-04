@@ -1,7 +1,10 @@
-<!-- <template>
+<template>
   <div class="body-top">
     <div class="body-top-btn" @click="hiddenSidebar">
       <i class="el-icon-menu"></i>
+    </div>
+    <div class="body-top-btn" @click="showWebIndex">
+      <i class="el-icon-position"></i>
     </div>
     <div class="right">
       <span class="body-top-btn" @click="screenFullToggle">
@@ -51,6 +54,7 @@
 </template>
 
 <script>
+import { removeToken } from "@/utils/common";
 import ScreenFull from "screenfull";
 import { mapState } from "vuex";
 import Menu from "@/menu/index";
@@ -76,7 +80,13 @@ export default {
           });
         });
     },
-    logout() {}
+    showWebIndex(){
+      this.$router.push({name:'WebIndex'})
+    },
+    logout() {
+      removeToken();
+      this.$router.push({name:'Login'})
+    }
   },
   computed: mapState(["system"])
 };
@@ -114,4 +124,3 @@ export default {
   }
 }
 </style>
- -->
