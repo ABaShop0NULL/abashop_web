@@ -1,4 +1,7 @@
 import goodsManage from "./goodsManage.js";
+import imgsManage from "./imgManage.js"
+import orderManage from "./oderManage.js"
+import userManage from "./userManage.js"
 /**
  * 首页
  * @type {{name: string, path: string, icon: string}}
@@ -12,6 +15,9 @@ let home = {
 
 export default {
   home,
-  goodsManage
+  goodsManage,
+  imgsManage,
+  orderManage,
+  userManage
   //helpCenter
 };

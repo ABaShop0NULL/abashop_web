@@ -11,7 +11,7 @@
 		  text-color="#fff"
 		  active-text-color="#ffd04b">
 		  <el-menu-item index="1">商品首页</el-menu-item>
-		  <el-submenu index="2">
+		<!--  <el-submenu index="2">
 		    <template slot="title">商品类型(待完善)</template>
 		    <el-menu-item index="2-1">电子</el-menu-item>
 		    <el-menu-item index="2-2">美食</el-menu-item>
@@ -22,12 +22,11 @@
 		      <el-menu-item index="2-4-2">牙刷</el-menu-item>
 		      <el-menu-item index="2-4-3">牙膏</el-menu-item>
 		    </el-submenu>
-		  </el-submenu>
-			 <el-menu-item index="3" style="float: left;" >订单(待写)</el-menu-item>
+		  </el-submenu> -->
+			 <el-menu-item index="3" style="float: left;"  @click.native="$router.push({name:'Order'})">订单(待完善)</el-menu-item>
 			  <el-menu-item index="4" style="float: left;" @click.native="$router.push({name:'CarIndex'})">
 					 查看我的购物车(待完善)</el-menu-item>
-			 <el-menu-item index="5" style="float: left;" @click.native="$router.push({name:'Aboutus'})">
-					关于我们(胡扯中…)</el-menu-item>
+		
 					
 					
 					<el-menu-item index="7" style="float: left;" @click.native="$router.push({name:'DashboardHome'})">

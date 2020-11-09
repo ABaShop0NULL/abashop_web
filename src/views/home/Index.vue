@@ -42,12 +42,22 @@
       </div>
     </el-card>
     <br />
+	
+	
+    <el-card style="border-radius: 0m;margin-bottom: 20px;">
+      <div slot="header">
+       	<h1>分析行情(表图)</h1>
+      </div>
+    </el-card>
+	
+
+	
+	
+	
     <el-card style="border-radius: 0">
       <div slot="header">
         <span>abashop后台管理系统v3.1.0</span>
       </div>
-
-      
     </el-card>
   </div>
 </template>

@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Layout from "@/views/layout/App.vue";
 import GoodsManage from "./goodsManage";
-
+import ImageManage from "./imgManage"
 Vue.use(VueRouter);
 
 const routes = [
@@ -26,6 +26,7 @@ const routes = [
     ]
   },
   GoodsManage,
+  ImageManage,
   {
     path: "/login",
     name: "Login",
@@ -71,15 +72,26 @@ const routes = [
     }
   },
   {
-    path: "/aboutUs",
-    name: "Aboutus",
+    path: "/order",
+    name: "Order",
     meta: {
       title: "后台注册",
       keepAlive: false
     },
     components: {
-      blank: resolve => require(["@/views/webManage/Aboutus.vue"], resolve)
+      blank: resolve => require(["@/views/webManage/Order.vue"], resolve)
     }
+  },
+  {
+      path:'/paySuccess',
+      name:'PaySuccess',
+      meta: {
+        title: "订单支付成功",
+        keepAlive: false
+      },
+      components: {
+        blank: resolve => require(["@/views/webManage/paySuccess.vue"], resolve)
+     }
   },
 ];
 

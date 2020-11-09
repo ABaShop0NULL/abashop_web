@@ -16,6 +16,6 @@ export default {
       },
       component: resolve =>
         require(["@/views/goodsManage/goodsList/Index.vue"], resolve)
-    }
+    },
   ]
 };

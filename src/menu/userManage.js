@@ -1,12 +1,12 @@
 export default {
-  name: "商品管理",
+  name: "用户管理",
   permissionsKey: "",
   icon: "fa fa-envelope-open",
   children: {
     courseCardList: {
-      name: "商品列表",
+      name: "用户列表",
       permissionsKey: "",
-      path: "/goods_manage/list"
+      path: "/user_manage/list"
     },
   }
 };
