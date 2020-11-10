@@ -34,8 +34,8 @@
 										
 	
 					<el-submenu index="6" style="float: right;">
-						  <template slot="title">个人中心(待写)</template>
-						  <el-menu-item index="6-1">个人信息(待写)</el-menu-item>
+						  <template slot="title">个人中心(待修改)</template>
+						  <el-menu-item index="6-1"  @click.native="$router.push({name:'Userinfo'})">个人信息(待修改)</el-menu-item>
 						  <el-menu-item index="6-2" @click="logout">退出</el-menu-item>
 					</el-submenu>
 		</el-menu>

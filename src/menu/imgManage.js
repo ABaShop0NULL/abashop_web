@@ -6,7 +6,7 @@ export default {
     courseCardList: {
       name: "轮播列表",
       permissionsKey: "",
-      path: "/goods_manage/list"
+      path: "/imgs_manage/list"
     },
   }
 };

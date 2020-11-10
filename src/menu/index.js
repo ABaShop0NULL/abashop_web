@@ -1,7 +1,7 @@
 import goodsManage from "./goodsManage.js";
 import imgsManage from "./imgManage.js"
-import orderManage from "./oderManage.js"
-import userManage from "./userManage.js"
+import orderManage from "./orderManage.js"
+import dataManage from "./dataManage.js"
 /**
  * 首页
  * @type {{name: string, path: string, icon: string}}
@@ -18,6 +18,6 @@ export default {
   goodsManage,
   imgsManage,
   orderManage,
-  userManage
+  dataManage
   //helpCenter
 };

@@ -2,7 +2,8 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Layout from "@/views/layout/App.vue";
 import GoodsManage from "./goodsManage";
-import ImageManage from "./imgManage"
+import ImageManage from "./imgManage";
+import OrderManage from "./orderManage";
 Vue.use(VueRouter);
 
 const routes = [
@@ -27,6 +28,7 @@ const routes = [
   },
   GoodsManage,
   ImageManage,
+  OrderManage,
   {
     path: "/login",
     name: "Login",
@@ -61,10 +63,21 @@ const routes = [
     }
   },
   {
+      path:'/userinfo',
+      name:'Userinfo',
+      meta: {
+        title: "个人信息",
+        keepAlive: false
+      },
+      components: {
+        blank: resolve => require(["@/views/webManage/Userinfo.vue"], resolve)
+      }
+    },
+  {
     path: "/cartIndex",
     name: "CarIndex",
     meta: {
-      title: "后台注册",
+      title: "购物车",
       keepAlive: false
     },
     components: {
@@ -75,7 +88,7 @@ const routes = [
     path: "/order",
     name: "Order",
     meta: {
-      title: "后台注册",
+      title: "订单",
       keepAlive: false
     },
     components: {
@@ -93,6 +106,17 @@ const routes = [
         blank: resolve => require(["@/views/webManage/paySuccess.vue"], resolve)
      }
   },
+  {
+      path:'/personal',
+      name:'Personal',
+      meta: {
+        title: "个人中心",
+        keepAlive: false
+      },
+      components: {
+        blank: resolve => require(["@/views/layout/personal.vue"], resolve)
+      }
+    },
 ];
 
 const originalPush = VueRouter.prototype.push;

@@ -15,21 +15,7 @@
       label-position="left"
       :label-width="labelWidth"
     >
-      <el-form-item label="商品名称" prop="name">
-        <el-input v-model="forms.name"></el-input>
-      </el-form-item>
-      <el-form-item label="价格" prop="price">
-        <el-input v-model="forms.price" placeholder="最多2位小数"></el-input>
-      </el-form-item>
-      <el-form-item label="描述" prop="desc">
-        <el-input type="textarea" v-model="forms.desc"></el-input>
-      </el-form-item>
-      <el-form-item label="商品类型" prop="type">
-        <el-select v-model="forms.type" placeholder="请选择商品类型">
-          <el-option label="美食" value="美食"></el-option>
-          <el-option label="电子" value="电子"></el-option>
-        </el-select>
-      </el-form-item>
+      
       <el-form-item label="图片" prop="url">
         <el-upload
           class="avatar-uploader"
@@ -79,11 +65,7 @@ export default {
   data() {
     return {
       forms: {
-        name: "",
-        desc: "",
-        price: "",
-        url: "",
-        type: ""
+        url: ""
       },
       rules: {
         ...FillerFieldRules(["name", "desc"], Required),

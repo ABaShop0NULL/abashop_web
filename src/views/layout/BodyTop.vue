@@ -42,7 +42,7 @@
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item @click.native="$router.push('/personal')">
-            <i style="padding-right: 8px" class="fa fa-user"></i>个人中心
+            <i style="padding-right: 8px" class="fa fa-user" @click.native="$router.push({name:'Personal'})"></i>个人中心
           </el-dropdown-item>
           <el-dropdown-item @click.native="logout">
             <i style="padding-right: 8px" class="fa fa-sign-out"></i>退出系统

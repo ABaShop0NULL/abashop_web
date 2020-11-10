@@ -1,9 +1,9 @@
 import Layout from "@/views/layout/App.vue";
 export default {
-  path: "/user_manage",
+  path: "/data_manage",
   component: Layout,
-  name: "UserManage",
-  redirect: "/user_manage/list",
+  name: "DataManage",
+  redirect: "/data_manage/list",
   meta: {
     title: "用户管理"
   },

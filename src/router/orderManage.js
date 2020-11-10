@@ -7,15 +7,15 @@ export default {
   meta: {
     title: "订单管理"
   },
-  // children: [
-  //   {
-  //     path: "list",
-  //     name: "ImgsManageList",
-  //     meta: {
-  //       title: "轮播图列表"
-  //     },
-  //     component: resolve =>
-  //       require(["@/views/imgManage/imgsList/Index.vue"], resolve)
-  //   },
-  // ]
+ children: [
+    {
+      path: "list",
+      name: "OrderManageList",
+      meta: {
+        title: "订单页面"
+      },
+      component: resolve =>
+        require(["@/views/orderManage/orderList/Index.vue"], resolve)
+    },
+  ]
 };

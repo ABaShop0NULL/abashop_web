@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<el-button type="primary" @click="showEditDialog = true">点我添加商品</el-button>
+		<el-button type="primary" @click="showEditDialog = true">点我添加轮播图</el-button>
 		
 		<el-carousel :interval="4000" type="card" height="500px">
 		    <el-carousel-item v-for="item in tableData" :key="item">

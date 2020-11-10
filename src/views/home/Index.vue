@@ -10,7 +10,7 @@
             <div class="grid-content ">
               <div style="padding: 10px;background: #673AB7">
                 <i class="el-icon-user index-icon"></i>
-                用户管理
+                数据管理
               </div>
             </div>
           </el-col>
@@ -44,10 +44,24 @@
     <br />
 	
 	
-    <el-card style="border-radius: 0m;margin-bottom: 20px;">
+    <el-card style="border-radius: 0m;margin-bottom: 20px; width: 100%;height: 500px;">
       <div slot="header">
-       	<h1>分析行情(表图)</h1>
-      </div>
+       	<h2>情况分析</h2>
+			<div style="margin-top: 30px;">
+				访问量
+				<el-progress type="circle" :percentage="88" show-text="true" style="margin-left: 50px;margin-right: 70px;"></el-progress>
+				反馈
+				<el-progress type="circle" :percentage="21" show-text="true"></el-progress>
+			</div>
+			<div style="margin-top: 60px;">
+				衣食
+				<el-progress :text-inside="true" :stroke-width="25" :percentage="44" status="success"></el-progress>
+				电子
+				<el-progress :text-inside="true" :stroke-width="25" :percentage="70"></el-progress>
+				母婴
+				<el-progress :text-inside="true" :stroke-width="25" :percentage="50" status="exception"></el-progress>
+			</div>
+		</div>
     </el-card>
 	
 
