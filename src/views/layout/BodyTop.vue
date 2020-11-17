@@ -81,7 +81,7 @@ export default {
         });
     },
     showWebIndex(){
-      this.$router.push({name:'WebIndex'})
+      this.$router.push({name:'WebIndex2'})
     },
     logout() {
       removeToken();

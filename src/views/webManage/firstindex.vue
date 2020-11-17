@@ -1,6 +1,44 @@
 <!-- 商品首页 -->
 <template>
 	<div>		
+		<div class="line"></div>
+		<el-menu
+		  :default-active="activeIndex2"
+		  class="el-menu-demo"
+		  mode="horizontal"
+		  @select="handleSelect"
+		  background-color="#1a472a"
+		  text-color="#fff"
+		  active-text-color="#ffd04b">
+		  <el-menu-item index="1">商品首页</el-menu-item>
+	<!-- 	 <el-submenu index="2">
+		    <template slot="title">商品类型(待完善)</template>
+		    <el-menu-item index="2-1">电子</el-menu-item>
+		    <el-menu-item index="2-2">美食</el-menu-item>
+		    <el-menu-item index="2-3">护肤</el-menu-item>
+		    <el-submenu index="2-4">
+		      <template slot="title">居家日用</template>
+		      <el-menu-item index="2-4-1">毛巾</el-menu-item>
+		      <el-menu-item index="2-4-2">牙刷</el-menu-item>
+		      <el-menu-item index="2-4-3">牙膏</el-menu-item>
+		    </el-submenu>
+		  </el-submenu> -->
+			 <el-menu-item index="3" style="float: left;"  @click.native="$router.push({name:'Order'})">订单(待完善)</el-menu-item>
+			  <el-menu-item index="4" style="float: left;" @click.native="$router.push({name:'CarIndex'})">
+					 查看我的购物车(待完善)</el-menu-item>
+		
+					
+					
+					<el-menu-item index="7" style="float: left;" @click.native="$router.push({name:'DashboardHome'})">
+										后台登录(现在为了方便，到时候删)</el-menu-item>
+										
+	
+					<el-submenu index="6" style="float: right;">
+						  <template slot="title">个人中心(待修改)</template>
+						  <el-menu-item index="6-1"  @click.native="$router.push({name:'Userinfo'})">个人信息(待修改)</el-menu-item>
+						  <el-menu-item index="6-2" @click="logout">退出</el-menu-item>
+					</el-submenu>
+		</el-menu>
 		<!-- 轮播图 -->
 		 <div class="box">	   
 		    <el-carousel height="450px">
@@ -10,42 +48,17 @@
 		      </el-carousel-item>
 		    </el-carousel>
 		  </div>
-		
-		
 		  <!-- 商品列表 ，每一列显示3个-->
 		 <div class="goodsLists">
-			 <div style="height: 70px;width: 100%;margin-top: 20px;">
-				 <el-input
-				   placeholder="请输入商品名"
-				   size="medium"
-				   style="width: 400px;border:1px solid cadetblue;border-radius: 5px 5px 5px 5px;"
-				   v-model="searchParams.title"
-				   clearable
-				 ></el-input>
-				 <el-select
-				   v-model="searchParams.type"
-				   clearable
-				   style="width: 150px;margin-left: 10px;margin-right: 10px;border:1px solid cadetblue;border-radius: 5px 5px 5px 5px;"
-				   placeholder="请选择商品类型"
-				   size="medium">
-				   <el-option label="电子" value="1"></el-option>
-				   <el-option label="美食" value="2"></el-option>
-				   <el-option label="母婴" value="3"></el-option>
-				 </el-select>
-				 <el-button type="success" size="medium" @click="refresh()"
-				   >搜索</el-button> 
-			 </div>
-			 
 			<el-row :gutter="20">
 				<el-col :span="8" v-for="item in goodsList" :key="item.goodsName">
-					<div class="item">
-						<el-image style="width: 300px; height:270px;" :src="item.url"></el-image>
-						<h3>{{item.goodsName}}</h3>
-						<p>{{item.detail}}</p>
-						<el-button style="margin-top: 5px;background-color: cadetblue;color: red;" @click="taketocar()">加入购物车</el-button>
-					
-					</div>
+          <div class="item">
+					<el-image style="width: 350px; height: 350px;" :src="item.url"></el-image>
+					<h3>{{item.goodsName}}</h3>
+					<p>{{item.detail}}</p>
+          </div>
 				</el-col>
+				
 			</el-row>
 		 </div> 
 		  
@@ -68,10 +81,7 @@
 	export default {
 	    data() {
 	      return {
-	        searchParams: {
-	          title: "",
-	          type: ""
-	        },
+	        
 	        activeIndex2: '1',
 			carouselList:[
 				{
@@ -131,9 +141,9 @@
 	      handleSelect(key, keyPath) {
 	        console.log(key, keyPath);
 	      },
-		  taketocar(){
-			  this.$router.push({name:'Login'});
-		  },
+		  logout() {
+		    this.$router.push({name:'Login'})
+		  }
 	    }
 	  }
 </script>
@@ -152,6 +162,7 @@
 	.box h1{
 		color: #FFFFFF;
 		margin-bottom: 20px;
+		
 	}
 	.item{
     height: 400px;

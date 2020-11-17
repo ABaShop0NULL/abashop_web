@@ -33,7 +33,7 @@ const routes = [
     path: "/login",
     name: "Login",
     meta: {
-      title: "后台登录",
+      title: "登录",
       keepAlive: false
     },
     components: {
@@ -44,7 +44,7 @@ const routes = [
     path: "/register",
     name: "Register",
     meta: {
-      title: "后台注册",
+      title: "注册",
       keepAlive: false
     },
     components: {
@@ -55,11 +55,22 @@ const routes = [
     path:'/webIndex',
     name:'WebIndex',
     meta: {
-      title: "商城首页",
+      title: "商城首页(未登录)",
       keepAlive: false
     },
     components: {
       blank: resolve => require(["@/views/webManage/Index.vue"], resolve)
+    }
+  },
+  {
+    path:'/webIndex2',
+    name:'WebIndex2',
+    meta: {
+      title: "商城首页(登陆过)",
+      keepAlive: false
+    },
+    components: {
+      blank: resolve => require(["@/views/webManage/firstindex.vue"], resolve)
     }
   },
   {

@@ -12,7 +12,7 @@
 	  </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="login">登录</el-button>
-        <el-button @click.native="$router.push({name:'Register'})">注册</el-button>
+        <el-button @click="regis()">注册</el-button>
         <el-row>
           
           <el-col :span="12" style="text-align:right">
@@ -42,12 +42,15 @@ export default {
     };
   },
   methods: {
+   regis(){
+		    this.$router.push("/register");
+	  },
    login() {
 	   //用户
    	if(this.loginForm.name=='aaa2'&&
    	this.loginForm.pass=='12345'){
    			setToken("HJDF844GDFG5D8J7FGHFG5");
-   		  this.$router.push("/webIndex");
+   		  this.$router.push("/webIndex2");
    	
      //登陆验证
      // this.$refs[loginForm].validate(valid => {
