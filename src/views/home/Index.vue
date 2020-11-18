@@ -42,8 +42,7 @@
       </div>
     </el-card>
     <br />
-	
-	
+
     <el-card style="border-radius: 0m;margin-bottom: 20px; width: 100%;height: 500px;">
       <div slot="header">
        	<h2>情况分析</h2>
@@ -63,10 +62,6 @@
 			</div>
 		</div>
     </el-card>
-	
-
-	
-	
 	
     <el-card style="border-radius: 0">
       <div slot="header">

@@ -8,7 +8,7 @@ import dataManage from "./dataManage.js"
  */
 let home = {
   name: "首页",
-  path: "/",
+  path: "/webIndex",
   permissionsKey: "",
   icon: "fa fa-tachometer"
 };

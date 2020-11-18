@@ -85,7 +85,7 @@ export default {
     },
     logout() {
       removeToken();
-      this.$router.push({name:'Login'})
+      this.$router.push({name:'LogReg'})
     }
   },
   computed: mapState(["system"])

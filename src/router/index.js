@@ -22,7 +22,7 @@ const routes = [
         meta: {
           title: "首页"
         },
-        component: resolve => require(["@/views/home/Index.vue"], resolve)
+		 component: resolve => require(["@/views/home/Index.vue"], resolve)
       }
     ]
   },
@@ -30,32 +30,23 @@ const routes = [
   ImageManage,
   OrderManage,
   {
-    path: "/login",
-    name: "Login",
-    meta: {
-      title: "登录",
-      keepAlive: false
-    },
-    components: {
-      blank: resolve => require(["@/views/login/Login.vue"], resolve)
-    }
-  },
-  {
-    path: "/register",
-    name: "Register",
-    meta: {
-      title: "注册",
-      keepAlive: false
-    },
-    components: {
-      blank: resolve => require(["@/views/login/Register.vue"], resolve)
-    }
-  },
+     path: "/Login",
+     name: "LogReg",
+     meta: {
+       title: "登录注册",
+       keepAlive: false
+     },
+     components: {
+       blank: resolve => require(["@/views/login/logReg.vue"], resolve)
+     }
+   },
+
+
   {
     path:'/webIndex',
     name:'WebIndex',
     meta: {
-      title: "商城首页(未登录)",
+      title: "商城首页",
       keepAlive: false
     },
     components: {
@@ -66,7 +57,7 @@ const routes = [
     path:'/webIndex2',
     name:'WebIndex2',
     meta: {
-      title: "商城首页(登陆过)",
+      title: "商城首页",
       keepAlive: false
     },
     components: {

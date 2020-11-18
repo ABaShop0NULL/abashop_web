@@ -12,7 +12,7 @@
 	  </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="login">登录</el-button>
-        <el-button @click="regis()">注册</el-button>
+		<el-button >取消</el-button>
         <el-row>
           
           <el-col :span="12" style="text-align:right">
@@ -42,9 +42,6 @@ export default {
     };
   },
   methods: {
-   regis(){
-		    this.$router.push("/register");
-	  },
    login() {
 	   //用户
    	if(this.loginForm.name=='aaa2'&&

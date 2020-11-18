@@ -132,7 +132,7 @@
 	        console.log(key, keyPath);
 	      },
 		  taketocar(){
-			  this.$router.push({name:'Login'});
+			  this.$router.push({name:'LogReg'});
 		  },
 	    }
 	  }

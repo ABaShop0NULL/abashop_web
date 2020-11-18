@@ -142,7 +142,7 @@
 	        console.log(key, keyPath);
 	      },
 		  logout() {
-		    this.$router.push({name:'Login'})
+		    this.$router.push({name:'LogReg'})
 		  }
 	    }
 	  }
