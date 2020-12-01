@@ -1,18 +1,18 @@
-import goodsManage from "./goodsManage.js";
+// import goodsManage from "./goodsManage.js";
 
-/**
- * 首页
- * @type {{name: string, path: string, icon: string}}
- */
-let home = {
-  name: "首页",
-  path: "/",
-  permissionsKey: "",
-  icon: "fa fa-tachometer"
-};
+// /**
+//  * 首页
+//  * @type {{name: string, path: string, icon: string}}
+//  */
+// let home = {
+//   name: "首页",
+//   path: "/",
+//   permissionsKey: "",
+//   icon: "fa fa-tachometer"
+// };
 
-export default {
-  home,
-  goodsManage
-  //helpCenter
-};
+// export default {
+//   home,
+//   goodsManage
+//   //helpCenter
+// };

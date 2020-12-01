@@ -43,7 +43,6 @@
 						<h3>{{item.goodsName}}</h3>
 						<p>{{item.detail}}</p>
 						<el-button style="margin-top: 5px;background-color: cadetblue;color: red;" @click="taketocar()">加入购物车</el-button>
-					
 					</div>
 				</el-col>
 			</el-row>

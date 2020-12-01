@@ -11,8 +11,8 @@
 		  text-color="#fff"
 		  active-text-color="#ffd04b">
 		  <el-menu-item index="1">商品首页</el-menu-item>
-	<!-- 	 <el-submenu index="2">
-		    <template slot="title">商品类型(待完善)</template>
+		 <el-submenu index="2">
+		    <template slot="title">商品类型</template>
 		    <el-menu-item index="2-1">电子</el-menu-item>
 		    <el-menu-item index="2-2">美食</el-menu-item>
 		    <el-menu-item index="2-3">护肤</el-menu-item>
@@ -22,20 +22,20 @@
 		      <el-menu-item index="2-4-2">牙刷</el-menu-item>
 		      <el-menu-item index="2-4-3">牙膏</el-menu-item>
 		    </el-submenu>
-		  </el-submenu> -->
-			 <el-menu-item index="3" style="float: left;"  @click.native="$router.push({name:'Order'})">订单(待完善)</el-menu-item>
+		  </el-submenu>
+			 <el-menu-item index="3" style="float: left;"  @click.native="$router.push({name:'Order'})">订单</el-menu-item>
 			  <el-menu-item index="4" style="float: left;" @click.native="$router.push({name:'CarIndex'})">
-					 查看我的购物车(待完善)</el-menu-item>
+					 查看我的购物车</el-menu-item>
 		
 					
 					
-					<el-menu-item index="7" style="float: left;" @click.native="$router.push({name:'DashboardHome'})">
+					<!-- <el-menu-item index="7" style="float: left;" @click.native="$router.push({name:'DashboardHome'})">
 										后台登录(现在为了方便，到时候删)</el-menu-item>
-										
+										 -->
 	
 					<el-submenu index="6" style="float: right;">
-						  <template slot="title">个人中心(待修改)</template>
-						  <el-menu-item index="6-1"  @click.native="$router.push({name:'Userinfo'})">个人信息(待修改)</el-menu-item>
+						  <template slot="title">个人中心</template>
+						  <el-menu-item index="6-1"  @click.native="$router.push({name:'Userinfo'})">个人信息</el-menu-item>
 						  <el-menu-item index="6-2" @click="logout">退出</el-menu-item>
 					</el-submenu>
 		</el-menu>
@@ -48,14 +48,16 @@
 		      </el-carousel-item>
 		    </el-carousel>
 		  </div>
+		  
 		  <!-- 商品列表 ，每一列显示3个-->
 		 <div class="goodsLists">
 			<el-row :gutter="20">
 				<el-col :span="8" v-for="item in goodsList" :key="item.goodsName">
           <div class="item">
-					<el-image style="width: 350px; height: 350px;" :src="item.url"></el-image>
+					<el-image style="width: 250px; height: 250px;" :src="item.url"></el-image>
 					<h3>{{item.goodsName}}</h3>
 					<p>{{item.detail}}</p>
+					<el-button style="margin-top: 5px;background-color: cadetblue;color: red;" @click="taketocar()">加入购物车</el-button>
           </div>
 				</el-col>
 				
@@ -143,6 +145,9 @@
 	      },
 		  logout() {
 		    this.$router.push({name:'LogReg'})
+		  },
+		  taketocar(){
+			  this.$router.push({name:'CarIndex'})
 		  }
 	    }
 	  }

@@ -99,25 +99,28 @@ export default {
 	  this.pageNo = currentPage;
 	  this.initData()//根据新的页码选取分页数据
 	},
-    removeItem(row) {
-      this.$confirm("确定删除?", "提示", {
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
-        type: "warning"
-      })
-        .then(() => {
-          row.d = 0;
-          // updateStatus({ id: row.id})
-          //   .then(r => {
-          //     this.$message({
-          //       type: "success",
-          //       message: "操作成功!"
-          //     });
-          //     this.refresh();
-          //   })
-          //   .catch(() => {});
-        })
-        .catch(() => {});
+    removeItem(i) {
+			this.tableData.splice(i,1);//splice删除
+	
+   //    this.$confirm("确定删除?", "提示", {
+   //      confirmButtonText: "确定",
+   //      cancelButtonText: "取消",
+   //      type: "warning"
+   //    })
+   //      .then(() => {
+   //        row.d = 0;
+		 
+   //        // updateStatus({ id: row.id})
+   //        //   .then(r => {
+   //        //     this.$message({
+   //        //       type: "success",
+   //        //       message: "操作成功!"
+   //        //     });
+   //        //     this.refresh();
+   //        //   })
+   //        //   .catch(() => {});
+   //      })
+   //      .catch(() => {});
     }
   },
    components: { Detail }

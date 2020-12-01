@@ -17,8 +17,8 @@ router.beforeEach((to, from, next) => {
   window.document.title = to.meta.title
     ? to.meta.title + "-" + Config.siteName
     : Config.siteName;
-  if (!getToken() && to.path !== "/login") {
-    next({ path: "/login" });
+  if (!getToken() && to.path !=="/Login" ) {
+    next({ path: "/Login" });
   } else {
     next();
   }

@@ -6,14 +6,14 @@
       </div>
       <div class="demo">
         <el-row :gutter="20">
-          <el-col :span="6">
+       <!--   <el-col :span="6">
             <div class="grid-content ">
               <div style="padding: 10px;background: #673AB7">
                 <i class="el-icon-user index-icon"></i>
                 数据管理
               </div>
             </div>
-          </el-col>
+          </el-col> -->
           <el-col :span="6">
             <div class="grid-content ">
               <div style="padding: 10px;background: #3c8dbc">

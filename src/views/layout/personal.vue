@@ -66,7 +66,7 @@ export default {
   data(){
     return{
       dataForm:{
-        nickName: '超级管理员',
+        nickName: 'abab',
         phone: '173567777777',
         homeUrl: 'http://www.baidu.com'
       }
